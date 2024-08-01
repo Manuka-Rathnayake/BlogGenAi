@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-yazha5m)$(9ut(d$yjl@qi64i$h!(h5j89jzmt!=y(c8$a!ej8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://bloggenai-f8e92736b3a8.herokuapp.com']
 
 
 # Application definition

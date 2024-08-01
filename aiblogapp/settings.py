@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-yazha5m)$(9ut(d$yjl@qi64i$h!(h5j89jzmt!=y(c8$a!ej8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://bloggenai-f8e92736b3a8.herokuapp.com']
+ALLOWED_HOSTS = ['bloggenai-f8e92736b3a8.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -83,6 +84,7 @@ WSGI_APPLICATION = 'aiblogapp.wsgi.application'
 #    }
 #}
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -93,7 +95,13 @@ DATABASES = {
         'PORT': config('DB_PORT'),
     }
 }
+"""
 
+DATABASE_URL = f"postgresql://{config('DB_USER')}:{config('DB_PASSWORD')}@{config('DB_HOST')}:{config('DB_PORT')}/{config('DB_NAME')}"
+
+DATABASES = {
+    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
+}
 
 
 # Password validation

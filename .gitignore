@@ -1,3 +1,6 @@
 # Ignore environment files
 .env
 *.env
+__pycache__/
+db.sqlite3
+.vscode/

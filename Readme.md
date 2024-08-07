@@ -40,8 +40,8 @@ User authentication is included to manage access.
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/Manuka-Rathnayake/BlogGenAi.git
+   cd BlogGenAi
 2. **Create a Virtual Environment**
    ```
    python -m venv venv
